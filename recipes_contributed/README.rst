@@ -1,4 +1,6 @@
-你的recipes
+Contributed recipes
 =====
+My Own Contributed Recipes for Calibre, which listed as Belows:
+*MSDN Magazine
 
-你也可以向我们提供你的recipes. 可以发邮件到 okidogii@gmail.com . 请包含recipe和生成的mobi文件。
+*InfoQ
