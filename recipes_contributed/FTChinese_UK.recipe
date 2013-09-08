@@ -1,0 +1,86 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+from calibre.web.feeds.news import BasicNewsRecipe
+
+class AdvancedUserRecipeFTChinese(BasicNewsRecipe):
+    title          = u'FT中文网-英国《金融时报》'
+    oldest_article = 2
+    max_articles_per_feed = 15
+
+    feeds          = [
+#	(u'FT中文网_英国《金融时报》', u'http://feeds.feedburner.com/ftchinese/rss')
+	(u'每日更新', u'http://www.ftchinese.com/rss/feed'),
+	(u'今日焦点', u'http://www.ftchinese.com/rss/news'),
+	(u'十大热门文章', u'http://www.ftchinese.com/rss/hotstoryby7day'),
+	(u'每日英语', u'http://www.ftchinese.com/rss/diglossia'),
+	(u'《第一时间解读》', u'http://www.ftchinese.com/rss/column/007000005'),
+	(u'《远观中国》', u'http://www.ftchinese.com/rss/column/007000004'),
+	(u'《中国纪事》', u'http://www.ftchinese.com/rss/column/007000007'),
+	(u'《朝九晚五》', u'http://www.ftchinese.com/rss/column/007000002'),
+	(u'《我是书虫》', u'http://www.ftchinese.com/rss/column/007000042'),
+	(u'生活时尚', u'http://www.ftchinese.com/rss/lifestyle'),
+	(u'读者有话说', u'http://www.ftchinese.com/rss/letter'),
+	(u'《马丁 沃尔夫》', u'http://www.ftchinese.com/rss/column/007000012'),
+	]
+    extra_css = """
+@font-face {
+font-family: "DroidFont", serif, sans-serif;
+font-weight: normal;
+font-style: normal;
+src: url(res:///system/fonts/DroidSansFallback.ttf);
+}
+@font-face {
+font-family: "DroidFont", serif, sans-serif;
+font-weight: bold;
+font-style: normal;
+src: url(res:///system/fonts/DroidSansFallback.ttf);
+}
+@font-face {
+font-family: "DroidFont", serif, sans-serif;
+font-weight: normal;
+font-style: italic;
+src: url(res:///system/fonts/DroidSansFallback.ttf);
+}
+@font-face {
+font-family: "DroidFont", serif, sans-serif;
+font-weight: bold;
+font-style: italic;
+src: url(res:///system/fonts/DroidSansFallback.ttf);
+}
+.calibre_navbar{font-family:"DroidFont",serif;}
+.calibre_navbar1{font-family:"DroidFont",serif;}
+.calibre_navbar2{font-family:"DroidFont",serif;}
+body { font-family: "DroidFont", serif;}
+    h1 {font-size: 130%;font-weight: 900; color: #222222;}\n
+    h2,h4 {padding-bottom: 3px;font-size: 120%;font-weight: 900; color: #222222;}\n
+    p.wp-caption-text, div.dateStamp {display:block; clear:both; font-size: 70%; color: #666666;}
+    """
+
+    __author__            = 'nook2'
+    __version__            = '1.0'
+    language = 'zh-CN'
+    pubisher  = u'FT中文网'
+    description           = u'FT中文网是英国《金融时报》唯一的非英语网站，致力于向中国商业菁英和企业决策者及时提供来自全球的商业、经济、市场、管理和科技新闻.'
+    category              = u'News.'
+    remove_javascript = True
+    use_embedded_content   = False
+    publication_type       = 'blog'    
+    no_stylesheets = True
+    masthead_url = 'http://s.ftimg.net/img/logo.gif'        
+    encoding               = 'UTF-8'
+    conversion_options = {'linearize_tables':True}
+    remove_attributes = ['href']
+    keep_only_tags = [
+      ]
+    remove_tags_after = [
+        dict(name='div',attrs={'class':['print_content']}),
+        ]
+    remove_tags = [
+        dict(name='div',attrs={'id':['printoption']}),
+        dict(name='div',attrs={'class':['story_list']}),
+      # dict(name='h4', attrs={'class':['sectionHeader']}),
+      ]
+
+    def print_version (self, url):
+        return url+'/?print=y'

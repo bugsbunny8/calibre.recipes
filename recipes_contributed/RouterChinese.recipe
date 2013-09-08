@@ -1,0 +1,80 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+from calibre.web.feeds.news import BasicNewsRecipe
+
+class AdvancedUserRecipeRouterChinese(BasicNewsRecipe):
+    title          = u'路透中文网'
+    oldest_article = 3
+    max_articles_per_feed = 30
+#Router RSS http://cn.reuters.com/tools/rss
+    feeds          = [
+	(u'热门资讯', u'http://cn.reuters.feedsportal.com/wtNews'),
+	(u'深度分析', u'http://cn.reuters.com/rssFeed/CNAnalysesNews/'),
+	(u'时事要闻',u'http://cn.reuters.feedsportal.com/CNTopGenNews'),
+	(u'专栏',u'http://cn.reuters.feedsportal.com/columnistNews'),
+	(u'中国财经',u'http://cn.reuters.feedsportal.com/chinaNews'),
+	(u'国际财经',u'http://cn.reuters.feedsportal.com/CNIntlBizNews'),
+	(u'职场管理',u'http://cn.reuters.feedsportal.com/CNMgtNews'),
+	(u'科技电子',u'http://cn.reuters.feedsportal.com/CNTechNews'),
+	]
+    extra_css = """
+@font-face {
+font-family: "DroidFont", serif, sans-serif;
+font-weight: normal;
+font-style: normal;
+src: url(res:///system/fonts/DroidSansFallback.ttf);
+}
+@font-face {
+font-family: "DroidFont", serif, sans-serif;
+font-weight: bold;
+font-style: normal;
+src: url(res:///system/fonts/DroidSansFallback.ttf);
+}
+@font-face {
+font-family: "DroidFont", serif, sans-serif;
+font-weight: normal;
+font-style: italic;
+src: url(res:///system/fonts/DroidSansFallback.ttf);
+}
+@font-face {
+font-family: "DroidFont", serif, sans-serif;
+font-weight: bold;
+font-style: italic;
+src: url(res:///system/fonts/DroidSansFallback.ttf);
+}
+.calibre_navbar{font-family:"DroidFont",serif;}
+.calibre_navbar1{font-family:"DroidFont",serif;}
+.calibre_navbar2{font-family:"DroidFont",serif;}
+body { font-family: "DroidFont", serif;}
+    h1 {font-size: 130%;font-weight: 900; color: #222222;}\n
+    h2,h4 {padding-bottom: 3px;font-size: 120%;font-weight: 900; color: #222222;}\n
+    p.wp-caption-text, div.dateStamp {display:block; clear:both; font-size: 70%; color: #666666;}
+    """
+
+    __author__            = 'nook2'
+    __version__            = '1.0'
+    language = 'zh-CN'
+    pubisher  = u'Reuter中文网'
+    description           = u'Reuter中文网是英国路透社的网站'
+    category              = u'News.'
+    remove_javascript = True
+    use_embedded_content   = False
+    publication_type       = 'blog'    
+    no_stylesheets = True
+    masthead_url = 'http://cn.reuters.com/resources/images/logo_reuters_media_cn.gif'        
+    encoding               = 'UTF-8'
+    conversion_options = {'linearize_tables':True}
+    remove_attributes = ['href']
+    keep_only_tags = [
+      ]
+    remove_tags_after = [
+#        dict(name='div',attrs={'class':['print_content']}),
+        ]
+    remove_tags = [
+#        dict(name='div',attrs={'id':['printoption']}),        
+      # dict(name='h4', attrs={'class':['sectionHeader']}),
+      ]
+
+    def print_version (self, url):
+        return url+'/?print=y'

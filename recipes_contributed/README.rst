@@ -2,9 +2,13 @@ Contributed recipes
 
 =====
 
-My Own Contributed Recipes for Calibre, which listed as Belows:
- - MSDN Magazine
+My Own Working Recipes for Calibre, which listed as belows:
+ - FTChinese(英国金融时报中文网)
+ - PingWest
+ - 36Ke(36氪)
+ - Harvard Business Review
  - InfoQ
+ - MSDN Magazine
 
 =====
 
