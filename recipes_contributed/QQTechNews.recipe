@@ -1,0 +1,82 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+from calibre.web.feeds.news import BasicNewsRecipe
+
+class AdvancedUserRecipe36kr(BasicNewsRecipe):
+    title          = u'腾讯科技频道'
+    oldest_article = 2
+    max_articles_per_feed = 30
+
+    feeds          = [
+    (u'滚动新闻', u'http://n.rss.qq.com/rss/tech_rss.php'),
+''' Below longtime not updated! so remove it'''
+'''    (u'互联网', u'http://tech.qq.com/web/webnews/rss_11.xml'),
+    (u'IT业界', u'http://tech.qq.com/web/it/telerss.xml'),
+    (u'通信', u'http://tech.qq.com/web/tele/telexml.xml'),
+    (u'创业创新', u'http://tech.qq.com/web/Innovation/rss_cycx.xml'),
+    (u'移动互联', u'http://tech.qq.com/web/ydhl/ydhl.xml'),
+    (u'电子商务', u'http://tech.qq.com/web/dzsw/dzsw.xml'),
+    (u'社交网络', u'http://tech.qq.com/web/sjwl/sjwl.xml'),
+    (u'网络游戏', u'http://tech.qq.com/web/gameol/onlinegame.xml'),
+    (u'趣科技订', u'http://tech.qq.com/web/wht/qkj.xml'),
+    (u'信息图', u'http://tech.qq.com/web/Information_image/xit.xml'),
+    (u'人物志', u'http://tech.qq.com/web/tech_people/rwz.xml'),
+    (u'趋势报告', u'http://tech.qq.com/web/Reporting/qsbg.xml'),
+    (u'实战讲堂', u'http://tech.qq.com/szjt/szjt.xml'),'''
+	]
+    extra_css = """
+@font-face {
+font-family: "DroidFont", serif, sans-serif;
+font-weight: normal;
+font-style: normal;
+src: url(res:///system/fonts/DroidSansFallback.ttf);
+}
+@font-face {
+font-family: "DroidFont", serif, sans-serif;
+font-weight: bold;
+font-style: normal;
+src: url(res:///system/fonts/DroidSansFallback.ttf);
+}
+@font-face {
+font-family: "DroidFont", serif, sans-serif;
+font-weight: normal;
+font-style: italic;
+src: url(res:///system/fonts/DroidSansFallback.ttf);
+}
+@font-face {
+font-family: "DroidFont", serif, sans-serif;
+font-weight: bold;
+font-style: italic;
+src: url(res:///system/fonts/DroidSansFallback.ttf);
+}
+.calibre_navbar{font-family:"DroidFont",serif;}
+.calibre_navbar1{font-family:"DroidFont",serif;}
+.calibre_navbar2{font-family:"DroidFont",serif;}
+body { font-family: "DroidFont", serif;}
+    h1 {font-size: 130%;font-weight: 900; color: #222222;}\n
+    h2,h4 {padding-bottom: 3px;font-size: 120%;font-weight: 900; color: #222222;}\n
+    h5.itemposttime, p.caption, div.datestamp {display:block; clear:both; font-size: 70%; color: #666666;}
+    """
+
+    __author__            = 'Nook2'
+    __version__            = '1.0'
+    language = 'zh-CN'
+    pubisher  = 'Tencent Tech'
+    description           = u'腾讯科技频道'
+    category              = 'News, Chinese'
+    remove_javascript = True
+    masthead_url = 'http://mat1.gtimg.com/www/images/channel_logo/tech_logo.png'
+    use_embedded_content   = True
+    no_stylesheets = True
+    encoding               = 'UTF-8'
+    conversion_options = {'linearize_tables':True}
+'''    keep_only_tags = [
+        dict(name='div', attrs={'id':['C-Main-Article-QQ',]}),
+        ]
+    remove_tags = [
+        dict(name='div', attrs={'class':['show-on-desktops',]}),
+        ]
+    remove_tags_after = [
+        dict(name='div', attrs={'class':['show-on-desktops',]}),
+        ]'''
