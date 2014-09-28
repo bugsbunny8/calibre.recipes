@@ -3,6 +3,7 @@ Contributed recipes
 =====
 
 My Own Working Recipes for Calibre, which listed as belows:
+ - QQTech(QQ科技频道)
  - FTChinese(英国金融时报中文网)
  - PingWest
  - 36Ke(36氪)
