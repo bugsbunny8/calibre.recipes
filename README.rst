@@ -1,9 +1,10 @@
-ikindle_recipes
+Kindle/Nook recipes
 ==================
 
-这是 `ikindle <http://ikindle.mobi>`_ 上从rss生成杂志的配置文件。
+来自于 `ikindle <http://ikindle.mobi>`_ 上从rss生成杂志的配置文件。
 在Calibre中，使用这些配置文件可以从指定的rss源抓取并生成mobi格式
 的杂志。
+ikindle.mobi现在已经连接不上去了，已经根据自己的需要修改添加相关的RSS杂志
 
 这个列表包含了哪些杂志的配置文件
 --------------
@@ -35,6 +36,12 @@ ikindle_recipes
 
 等诸多杂志和报纸
 
+现有杂志
+---------------
+
+添加杂志列表如下：
+* QQ新闻
+
 我怎么使用这些配置文件
 ---------------
 
@@ -50,10 +57,5 @@ ikindle_recipes
 
 之后将recipe文件中的所有内容拷贝进去就行。
 
-听起来很麻烦，有没有什么简单的方法
 ------------
 
-最简单的方法就是去我们的站点订阅这些杂志，你会在每天清晨收到订阅
-的杂志和报纸。
-
-http://ikindle.mobi
